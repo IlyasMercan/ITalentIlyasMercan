@@ -1,0 +1,16 @@
+
+/*
+svg {
+  width: 1000px;
+  height: 1000px;
+}
+*/
+
+.de-warmste-hackathon {
+  fill: black;
+  transition: 03s;
+}
+
+.de-warmste-hackathon:hover {
+  fill: orange;
+}
