@@ -6,12 +6,16 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { TimelineComponent } from './components/timeline/timeline.component';
 import {EventService} from './services/event.service';
+import {XFactorComponent} from './components/x-factor/x-factor.component';
+import { AboutComponent } from './components/about/about.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    TimelineComponent
+    TimelineComponent,
+    XFactorComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,

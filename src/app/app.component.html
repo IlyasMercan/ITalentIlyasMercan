@@ -1,1 +1,7 @@
-<app-timeline></app-timeline>
+<nav>
+  <a [routerLink]="['/home']" routerLinkActive="router-link-active">Home</a>
+  <a [routerLink]="['/x-factor']" routerLinkActive="router-link-active">X-factor</a>
+  <a [routerLink]="['/about']" routerLinkActive="router-link-active">About</a>
+</nav>
+
+<router-outlet></router-outlet>

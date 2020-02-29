@@ -22,20 +22,26 @@ export class TimelineComponent implements OnInit {
 
   createTimeline() {
     const events = this.service.events;
+    const width = 2000;
+    const height = 800;
 
     const timeline = d3.select('#timeline-container')
       .append('svg')
-      .attr('height', 800)
-      .attr('width', 2000);
+      .attr('width', width)
+      .attr('height', height);
 
     // create a timeline with start date 01/01/2019 and end date 01/03/2019
-    this.createRectangle(timeline, 'black', ((END_TIMELINE.getTime() / MILISECONDS_IN_DAY) - (START_TIMELINE.getTime() / MILISECONDS_IN_DAY)) * 2, 1, 0, 25, 'timeline');
+    this.createRectangle(timeline, 'black', ((END_TIMELINE.getTime() / MILISECONDS_IN_DAY) - (START_TIMELINE.getTime() / MILISECONDS_IN_DAY)) * 3, 2, 0, 30, 'timeline');
+
+    // create a lower and an upper border for the timeline
+    this.createRectangle(timeline, 'black', 3, 30, 0, 16, 'lower-border');
+    this.createRectangle(timeline, 'black', 3, 30, ((END_TIMELINE.getTime() / MILISECONDS_IN_DAY) - (START_TIMELINE.getTime() / MILISECONDS_IN_DAY)) * 3, 16, 'upper-border');
+
 
     // put all events on timeline
     for (let i = 0; i < events.length; i++) {
       this.createEventOnTimeline(timeline, events[i]);
     }
-
 
     // make sure every element of specific class lights up when hovered
     for (let i = 0; i < events.length; i++) {
@@ -60,6 +66,8 @@ export class TimelineComponent implements OnInit {
         '  transition: 0.5s;\n' +
         '}\n');
     }
+
+    // TODO zoek naar zoom brush: https://www.d3-graph-gallery.com/graph/area_brushZoom.html
   }
 
 
@@ -67,7 +75,7 @@ export class TimelineComponent implements OnInit {
     // for every date, create a square on the timeline
     for (let i = 0; i < event.dates.length; i++) {
       const dayFromStartOfTimeline = ((event.dates[i].getTime() / MILISECONDS_IN_DAY) - (START_TIMELINE.getTime() / MILISECONDS_IN_DAY));
-      this.createRectangle(svg, 'black', 3, 10, dayFromStartOfTimeline * 2, 20, event.name.replace(/ /g, '-').replace(/:/g, '').replace(/'/g, '').toLowerCase());
+      this.createRectangle(svg, 'black', 3, 16, dayFromStartOfTimeline * 3, 23, event.name.replace(/ /g, '-').replace(/:/g, '').replace(/'/g, '').toLowerCase());
     }
   }
 
