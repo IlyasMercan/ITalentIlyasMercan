@@ -1,0 +1,18 @@
+<div class="container" *ngIf="event">
+  <div class="row">
+    <h1 class="pxl-font offset-1 col-10">{{event.name}}</h1>
+
+    <div>
+      <span>Effectieve uren: {{event.receivedHours}}</span>
+    </div>
+
+    <div class="offset-1 col-10">
+      {{event.report}}
+    </div>
+    <div *ngFor="let pictureUrl of event.urlsOfPictures" id="pictures">
+      <img src="{{pictureUrl}}" alt="{{pictureUrl.toString()}}"/>
+    </div>
+  </div>
+</div>
+
+

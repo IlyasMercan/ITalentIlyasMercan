@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import * as d3 from 'd3';
 import {Event} from '../../models/event.model';
 import {EventService} from '../../services/event.service';
@@ -12,6 +12,8 @@ const END_TIMELINE = new Date('2020-03-01');
   styleUrls: ['./timeline.component.css']
 })
 export class TimelineComponent implements OnInit {
+
+  @Output() onClickOnEvent: EventEmitter<Event> = new EventEmitter();
 
   constructor(private service: EventService) {
   }
@@ -28,8 +30,7 @@ export class TimelineComponent implements OnInit {
     const timeline = d3.select('#timeline-container')
       .append('svg')
       .attr('width', width)
-      .attr('height', height)
-      .attr('class', 'timeline');
+      .attr('height', height);
 
     // create a timeline with start date 01/01/2019 and end date 01/03/2019
     this.createRectangle(timeline, 'black', ((END_TIMELINE.getTime() / MILISECONDS_IN_DAY) - (START_TIMELINE.getTime() / MILISECONDS_IN_DAY)) * 3, 2, 0, 30, 'timeline');
@@ -76,12 +77,13 @@ export class TimelineComponent implements OnInit {
     // for every date, create a square on the timeline
     for (let i = 0; i < event.dates.length; i++) {
       const dayFromStartOfTimeline = ((event.dates[i].getTime() / MILISECONDS_IN_DAY) - (START_TIMELINE.getTime() / MILISECONDS_IN_DAY));
-      this.createRectangle(svg, 'black', 3, 16, dayFromStartOfTimeline * 3, 23, event.name.replace(/ /g, '-').replace(/:/g, '').replace(/'/g, '').toLowerCase());
+      this.createRectangle(svg, 'black', 3, 16, dayFromStartOfTimeline * 3, 23, event.name.replace(/ /g, '-').replace(/:/g, '').replace(/'/g, '').toLowerCase())
+        .on('click', () => {this.clickOnEvent(event)});
     }
   }
 
   createRectangle(svg, fill, width, height, x, y, htmlClass) {
-    svg
+    return svg
       .append('rect')
       .attr('fill', fill)
       .attr('height', height)
@@ -89,6 +91,10 @@ export class TimelineComponent implements OnInit {
       .attr('x', x)
       .attr('y', y)
       .attr('class', htmlClass);
+  }
+
+  clickOnEvent(event: Event) {
+    this.onClickOnEvent.emit(event);
   }
 }
 
