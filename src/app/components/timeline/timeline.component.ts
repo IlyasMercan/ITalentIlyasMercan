@@ -22,13 +22,14 @@ export class TimelineComponent implements OnInit {
 
   createTimeline() {
     const events = this.service.events;
-    const width = 2000;
-    const height = 800;
+    const width = 1300;
+    const height = 60;
 
     const timeline = d3.select('#timeline-container')
       .append('svg')
       .attr('width', width)
-      .attr('height', height);
+      .attr('height', height)
+      .attr('class', 'timeline');
 
     // create a timeline with start date 01/01/2019 and end date 01/03/2019
     this.createRectangle(timeline, 'black', ((END_TIMELINE.getTime() / MILISECONDS_IN_DAY) - (START_TIMELINE.getTime() / MILISECONDS_IN_DAY)) * 3, 2, 0, 30, 'timeline');

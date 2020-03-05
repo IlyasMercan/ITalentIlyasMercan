@@ -1,1 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
+@font-face {
+  font-family: '83 heavy extended';
+  src: url("assets/fonts/Helvetica LT 83 Heavy Extended.ttf");
+}
+
+body {
+  margin: 0;
+}

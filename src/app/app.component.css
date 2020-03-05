@@ -1,0 +1,25 @@
+.pxl-font {
+  font-family: "83 heavy extended";
+}
+
+a {
+  color: white !important;
+}
+
+a:hover {
+  color: #58a618 !important;
+}
+
+nav {
+  background: black;
+}
+
+.navbar-brand {
+  margin-top: 7px;
+  color: white;
+  background-color: black;
+}
+
+#navbarNav {
+  background: black;
+}

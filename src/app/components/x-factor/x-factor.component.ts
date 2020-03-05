@@ -15,7 +15,7 @@ export class XFactorComponent implements OnInit {
   }
 
   createInteractiveXFactor() {
-    const width = 2000;
+    const width = 1800;
     const height = 800;
 
     const xFactor = d3.select('#x-factor-container')

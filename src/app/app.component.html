@@ -1,7 +1,18 @@
-<nav>
-  <a [routerLink]="['/home']" routerLinkActive="router-link-active">Home</a>
-  <a [routerLink]="['/x-factor']" routerLinkActive="router-link-active">X-factor</a>
-  <a [routerLink]="['/about']" routerLinkActive="router-link-active">About</a>
+<nav class="navbar navbar-expand-sm w-100">
+  <h3 class="navbar-brand pxl-font">I-TALENT PORTFOLIO</h3>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item mx-5">
+        <a class="nav-link pxl-font" [routerLink]="['/home']" routerLinkActive="router-link-active">HOME</a>
+      </li>
+      <li class="nav-item mx-5">
+        <a class="nav-link pxl-font" [routerLink]="['/x-factor']" routerLinkActive="router-link-active">X-FACTOR</a>
+      </li>
+      <li class="nav-item mx-5">
+        <a class="nav-link pxl-font" [routerLink]="['/about']" routerLinkActive="router-link-active">ABOUT</a>
+      </li>
+    </ul>
+  </div>
 </nav>
 
 <router-outlet></router-outlet>
