@@ -9,6 +9,7 @@ import {EventService} from './services/event.service';
 import {XFactorComponent} from './components/x-factor/x-factor.component';
 import { AboutComponent } from './components/about/about.component';
 import { EventDetailComponent } from './components/event-detail/event-detail.component';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -17,11 +18,12 @@ import { EventDetailComponent } from './components/event-detail/event-detail.com
     TimelineComponent,
     XFactorComponent,
     AboutComponent,
-    EventDetailComponent
+    EventDetailComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
   ],
   providers: [EventService],
   bootstrap: [AppComponent]

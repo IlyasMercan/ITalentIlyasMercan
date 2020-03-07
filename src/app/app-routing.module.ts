@@ -1,9 +1,8 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import {NgModule} from '@angular/core';
+import {Routes, RouterModule, ActivatedRouteSnapshot, RouterStateSnapshot} from '@angular/router';
 import {HomeComponent} from './components/home/home.component';
 import {XFactorComponent} from './components/x-factor/x-factor.component';
 import {AboutComponent} from './components/about/about.component';
-
 
 const routes: Routes = [
   {
@@ -24,6 +23,16 @@ const routes: Routes = [
     component: AboutComponent
   },
   {
+    path: 'redirectToLinkedIn',
+    component: HomeComponent,
+    resolve: {
+      url: 'externalUrlRedirectResolver'
+    },
+    data: {
+      externalUrl: 'http://www.linkedin.com/in/ilyas-mercan'
+    }
+  },
+  {
     path: '**',
     component: HomeComponent
   }
@@ -32,6 +41,14 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
+  providers: [
+    {
+      provide: 'externalUrlRedirectResolver',
+      useValue: (route: ActivatedRouteSnapshot) => {
+        window.location.href = (route.data as any).externalUrl;
+      }
+    }
+  ],
 })
 export class AppRoutingModule { }

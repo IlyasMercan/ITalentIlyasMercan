@@ -2,7 +2,10 @@
   <div class="row">
     <h1 class="pxl-font offset-1 col-10">{{event.name}}</h1>
 
-    <div>
+    <div class="offset-1 col-10">
+      <h5 class="pxl-font">Een initiatief van {{event.organizer}}</h5>
+      <span *ngFor="let date of event.dates; let i = index">{{date.getDate() + '-' + date.getMonth() + '-' + date.getFullYear()}}<span *ngIf="i !== event.dates.length-1">, </span></span>
+      <br>
       <span>Effectieve uren: {{event.receivedHours}}</span>
     </div>
 
