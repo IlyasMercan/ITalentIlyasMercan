@@ -30,7 +30,9 @@ export class TimelineComponent implements OnInit {
     const timeline = d3.select('#timeline-container')
       .append('svg')
       .attr('width', width)
-      .attr('height', height);
+      .attr('height', height)
+      .attr('display', 'block')
+      .attr('class', 'mx-auto');;
 
     // create a timeline with start date 01/01/2019 and end date 01/03/2019
     this.createRectangle(timeline, 'black', ((END_TIMELINE.getTime() / MILISECONDS_IN_DAY) - (START_TIMELINE.getTime() / MILISECONDS_IN_DAY)) * 3, 2, 0, 30, 'timeline');

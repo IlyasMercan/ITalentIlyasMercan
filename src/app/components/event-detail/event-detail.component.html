@@ -2,19 +2,21 @@
   <div class="row">
     <h1 class="pxl-font offset-1 col-10">{{event.name}}</h1>
 
-    <div class="offset-1 col-10">
+    <div class="offset-1 col-10 mb-3">
       <h5 class="pxl-font">Een initiatief van {{event.organizer}}</h5>
       <span *ngFor="let date of event.dates; let i = index">{{date.getDate() + '-' + date.getMonth() + '-' + date.getFullYear()}}<span *ngIf="i !== event.dates.length-1">, </span></span>
       <br>
       <span>Effectieve uren: {{event.receivedHours}}</span>
     </div>
 
-    <div class="offset-1 col-10">
-      {{event.report}}
+    <div class="offset-1 col-10" [innerHTML]="event.report | newLine"></div>
+
+    <div class="offset-1 col-10 mb-3">
+      <div class="mb-3 text-center" *ngFor="let pictureUrl of event.urlsOfPictures" id="pictures">
+        <img class="img-fluid w-75 mx-auto" src="{{pictureUrl}}" alt="{{pictureUrl.toString()}}"/>
+      </div>
     </div>
-    <div *ngFor="let pictureUrl of event.urlsOfPictures" id="pictures">
-      <img src="{{pictureUrl}}" alt="{{pictureUrl.toString()}}"/>
-    </div>
+
   </div>
 </div>
 

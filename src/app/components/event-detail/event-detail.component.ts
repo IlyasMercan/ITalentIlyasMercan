@@ -13,6 +13,7 @@ export class EventDetailComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+
   }
 
 }
