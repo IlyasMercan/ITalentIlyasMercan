@@ -32,7 +32,7 @@ export class TimelineComponent implements OnInit {
       .attr('width', width)
       .attr('height', height)
       .attr('display', 'block')
-      .attr('class', 'mx-auto');;
+      .attr('class', 'mx-auto');
 
     // create a timeline with start date 01/01/2019 and end date 01/03/2019
     this.createRectangle(timeline, 'black', ((END_TIMELINE.getTime() / MILISECONDS_IN_DAY) - (START_TIMELINE.getTime() / MILISECONDS_IN_DAY)) * 3, 2, 0, 30, 'timeline');
@@ -70,8 +70,6 @@ export class TimelineComponent implements OnInit {
         '  transition: 0.5s;\n' +
         '}\n');
     }
-
-    // TODO zoek naar zoom brush: https://www.d3-graph-gallery.com/graph/area_brushZoom.html
   }
 
 
