@@ -11,10 +11,9 @@
 
     <div class="offset-1 col-10" [innerHTML]="event.report | newLine"></div>
 
-    <div class="offset-1 col-10 mb-3">
-      <div class="mb-3 text-center" *ngFor="let pictureUrl of event.urlsOfPictures" id="pictures">
-        <img class="img-fluid w-75 mx-auto" src="{{pictureUrl}}" alt="{{pictureUrl.toString()}}"/>
-      </div>
+    <div class="offset-1 col-10 mb-3" *ngIf="event.picture">
+      <img class="img-fluid offset-1 col-10" src="{{event.picture.url}}" alt="{{event.picture.url.toString()}}"/>
+      <p class="offset-1 col-10">Credit @ {{event.picture.credit}}</p>
     </div>
 
   </div>
