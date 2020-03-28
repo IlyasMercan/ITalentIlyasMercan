@@ -3,6 +3,8 @@ import {Routes, RouterModule, ActivatedRouteSnapshot, RouterStateSnapshot} from 
 import {HomeComponent} from './components/home/home.component';
 import {XFactorComponent} from './components/x-factor/x-factor.component';
 import {AboutComponent} from './components/about/about.component';
+import {OverviewComponent} from './components/overview/overview.component';
+import {FinalReflectionComponent} from './components/final-reflection/final-reflection.component';
 
 const routes: Routes = [
   {
@@ -19,8 +21,16 @@ const routes: Routes = [
     component: XFactorComponent
   },
   {
+    path: 'overview',
+    component: OverviewComponent
+  },
+  {
     path: 'about',
     component: AboutComponent
+  },
+  {
+    path: 'final-reflection',
+    component: FinalReflectionComponent
   },
   {
     path: 'redirectToLinkedIn',

@@ -4,7 +4,7 @@
 
     <div class="offset-1 col-10 mb-3">
       <h5 class="pxl-font">Een initiatief van {{event.organizer}}</h5>
-      <span *ngFor="let date of event.dates; let i = index">{{date.getDate() + '-' + date.getMonth() + '-' + date.getFullYear()}}<span *ngIf="i !== event.dates.length-1">, </span></span>
+      <span *ngFor="let date of event.dates; let i = index">{{("0" + date.getDate()).slice(-2) + '-' + ("0" + (date.getMonth() + 1)).slice(-2) + '-' + date.getFullYear()}}<span *ngIf="i !== event.dates.length-1">, </span></span>
       <br>
       <span>Effectieve uren: {{event.receivedHours}}</span>
     </div>

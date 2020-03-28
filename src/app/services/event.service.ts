@@ -5,7 +5,7 @@ import {Picture} from '../models/picture.model';
 // const FIRST_EVENT_DATE = new Date('2019-02-20');
 @Injectable()
 export class EventService {
-  // TODO: zijn dit ze allemaal?
+  // TODO: zijn dit ze allemaal? --> WAAR IS DE INNOVATIE ROUTE???
   events: Event[] = [
     new Event('Ontbijtseminarie: Droneport' , 'Droneport', [new Date('2019-02-20')], new Picture('../../assets/fotos/droneport_ontbijt_seminarie.jpg', 'Francis Vos'), 2, 'Reeds vroeg in februari werd ons bekend gemaakt dat er een verplicht seminarie was op woensdag 20 februari. Dit “ontbijtseminarie” zou doorgaan in de refter van de D blok en al om kwart voor 8 beginnen. Gelukkig werd de pijn van het vroeg opstaan verlicht door het nuttigen van een uitgebreid ontbijt van koffiekoeken en eieren. \n' +
       'Het seminarie startte met een korte introductie van het departementshoofd, Francis Vos. Hij stelde ons de lezer voor, de CEO van Droneport, Mark Vanlook. Al snel werd de microfoon aan hem doorgegeven en kon de lezing beginnen. Meneer Vanlook begon met een beknopt introductiefilmpje, waar hij ondertussen kort uitleg over gaf. Hij sprak in deze inleiding over de vele gebruiksmogelijkheden van drones, zoals  bijvoorbeeld in de commerciële  sector. Denk aan UPS en Amazon, die zo hun pakketten zouden kunnen afleveren aan hun klanten. Waar anders een bestelwagen zich door verschillende str\taten moet begeven, kan een drone in vogelvlucht veel sneller zijn locatie bereiken. Er zijn echter nog vele andere sectoren waar dit van toepassing is, zoals de militaire sector, de agricultuur enz.\n' +

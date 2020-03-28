@@ -1,0 +1,16 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-8 my-4 border-bottom" *ngFor="let event of events">
+      <h5 class="pxl-font">{{event.name.toUpperCase()}}</h5>
+      <span>Door </span><span *ngFor="let location of event.locations; let i = index">{{location.companyName}}<span *ngIf="i !== event.locations.length-1">, </span></span>
+      <br/>
+      <span *ngFor="let date of event.dates; let i = index">{{("0" + date.getDate()).slice(-2) + '-' + ("0" + (date.getMonth() + 1)).slice(-2) + '-' + date.getFullYear()}}<span *ngIf="i !== event.dates.length-1">, </span></span>
+      <br/>
+      <span>Effectieve uren: <b>{{event.receivedHours}}</b></span>
+      <br/>
+      <span>{{event.description}}</span>
+    </div>
+
+  </div>
+</div>
+

@@ -1,0 +1,28 @@
+import {Injectable} from '@angular/core';
+import {MinimalEvent} from '../models/min-event.model';
+import {Location} from '../models/location.model';
+
+@Injectable()
+export class MinimalEventService {
+  events: MinimalEvent[] = [
+    new MinimalEvent('Projectweek 2018-2019', 'Tijdens de projectweek werden verschillende gastsprekers uitgenodigd aan de PXL. Tijdens deze week werd de Thalento test ook ingevuld en onze teamleden voor het research project bekend gemaakt.', [new Location('PXL', 'Elfde-Liniestraat 24 3500 Hasselt')], [new Date('2019-02-11'), new Date('2019-02-12'), new Date('2019-02-13'), new Date('2019-02-14'), new Date('2019-02-15')], 26, false),
+    new MinimalEvent('Innovatieroute AR/VR', 'Deze innovatieroute was een diepere insteek op het begrijpen van VR. De eerste dag was een snelcursus Unity, de twee dagen daarna hadden betrekking op Unreal Engine.', [new Location('PXL', 'Elfde-Liniestraat 24 3500 Hasselt'), new Location('Uncanny', 'Kempische Steenweg 293, 3500 Hasselt')], [new Date('2019-09-25'), new Date('2019-10-02'), new Date('2019-10-03')], 24, false),
+    new MinimalEvent('POP-sessies', 'Tijdens de POP sessies verkregen we meer uitleg over samenwerking in teamverband, het onderscheid tussen hoofd- en bijzaken, en waardering van teamgenoten.', [new Location('PXL', 'Elfde-Liniestraat 24 3500 Hasselt')], [new Date('2019-10-04')], 10, false),
+    new MinimalEvent('De warmste hackathon', 'Dit was de eerste editie van De Warmste Hackathon, opgericht door Realdolmen. In groep werkten we een idee uit om de wereld te verbeteren, namelijk een gezelschapsspel applicatie.', [new Location('Realdolmen', 'Stormstraat 2, 1000 Brussel')], [new Date('2019-10-11'), new Date('2019-10-12')], 16, true),
+    new MinimalEvent('Seminarie: chat bots', 'Mathias Vissers van Intracto gaf hier enthousiast een presentatie rond dialogflow, een Natural Language Processing platform van Google.', [new Location('Intracto', 'Elfde-Liniestraat 24, 3500 Hasselt')], [new Date('2019-11-06')], 3, false),
+    new MinimalEvent('Seminarie: inleiding tot 5G', 'Met dit seminarie werd door beide gastlezers een korte geschiedenis geschetst van de ontwikkeling van telefoonnetwerken. Hierna werd er uitleg gegeven over 5G.', [new Location('Ericsson', 'Elfde-Liniestraat 24, 3500 Hasselt')], [new Date('2019-11-27')], 3, false),
+    new MinimalEvent('Seminarie: React Native: cross-platform mobile app development', 'Bij dit seminarie werd de geschiedenis van React uitgelegd, gevolgd door de voor- en nadelen van React Native. Het grootste deel van dit seminarie bestond echter uit een live demo.', [new Location('AppFoundry', 'Elfde-Liniestraat 24, 3500 Hasselt')], [new Date('2019-12-18')], 3, false),
+    new MinimalEvent('Seminarie: Droneport', 'Aan dit ontbijtseminarie gaf de CEO van Droneport, Mark Vanlook, uitleg over de verschillende soorten drones. Eveneens gaf hij een bondige omschrijving van zijn bedrijf.', [new Location('Droneport', 'Elfde-Liniestraat 24, 3500 Hasselt')], [new Date('2019-02-20')], 2, false),
+    new MinimalEvent('Seminarie: Superlab', 'Superlab’s medeoprichter Geert Tewissen vertelde hier hoe we een intuïtieve userinterface kunnen opstellen.', [new Location('Superlab', 'Elfde-Liniestraat 24, 3500 Hasselt')], [new Date('2019-03-27')], 3, false),
+    new MinimalEvent('De Vlaamse Programmeerwedstrijd', 'Tijdens de Vlaamse Programmeer Wedstrijd van 2019 werden er teams van drie personen aan een computer gezet om verscheidene programmeervraagstukken op te lossen.', [new Location('Vlaamse Programmeer Wedstrijd', 'Ellermanstraat 33, 2060 Antwerpen')], [new Date('2019-03-13')], 3, true),
+    new MinimalEvent('Seminarie: XTI', 'Het publiek kreeg bij dit seminarie, gegeven door Bert Roex, een uitgebreide beschrijving over monolithische applicaties.', [new Location('XTi', 'Elfde-Liniestraat 24, 3500 Hasselt')], [new Date('2019-03-20')], 4, false),
+    new MinimalEvent('Seminarie: ACA IT', 'Drie werknemers van ACA-IT gaven de opdracht om met een kanban bord een test driven scenario te simuleren. Er werd een project voorzien waarin opzettelijk fouten waren aangebracht.', [new Location('ACA IT', 'Herkenrodesingel 8b, 3500 Hasselt')], [new Date('2019-03-27')], 3, false),
+    new MinimalEvent('Seminarie: Evance', 'Dit seminarie was een eerste initiatie tot Firebase, een NoSql alternatief van datastorage aangeboden door google. Het merendeel van di seminarie werd gevolgd aan de hand van een live demo.', [new Location('Evance', 'Kempische Steenweg 293, 3500 Hasselt')], [new Date('2019-04-03')], 3, false),
+    new MinimalEvent('Seminarie: Facebook en ik', 'Tim Verheyden van de VRT gaf met een ontbijtseminarie aan de PXL een live bespreking over zijn succesreportage “Facebook en ik”.', [new Location('PXL', 'Elfde-Liniestraat 24, 3500 Hasselt')], [new Date('2019-10-04')], 2, false),
+    new MinimalEvent('Studiereis: Berlijn (optie 2)', 'Met deze vijf daagse uitstap naar Berlijn werden verschillende culturele locaties bezocht, zoals de Brandenburger Tor en de Gendarmen markt.', [new Location('PXL', 'Elfde-Liniestraat 24, 3500 Hasselt')], [new Date('2019-02-14'), new Date('2019-02-15'), new Date('2019-02-16'), new Date('2019-02-17'), new Date('2019-02-18')], 30, false),
+    new MinimalEvent('Care-athon', 'Tijdens deze hackathon werd op twee dagen tijd geprobeerd om een applicatie te ontwikkelen om met gezichtsherkenning kinderen in en uit te scannen voor opvanglocaties.', [new Location('PXL met Cegeka, de Xplore groep en Corda Campus', 'Kempische Steenweg 307, 3500 Hasselt')], [new Date('2020-02-20'), new Date('2020-02-21')], 26, false),
+  ];
+
+  constructor() {}
+
+}
