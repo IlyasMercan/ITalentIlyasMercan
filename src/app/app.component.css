@@ -47,3 +47,7 @@ footer {
   bottom: 0;
   width: 100%;
 }
+
+.menu-toggle {
+  background-image: linear-gradient(to bottom, #000000 3px, #ffffff 3px, #ffffff 7px, #000000 7px, #000000 9px, #ffffff 9px, #ffffff 13px, #000000 13px, #000000 15px, #ffffff 15px, #ffffff 19px, #000000 19px);
+}

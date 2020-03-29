@@ -1,1 +1,8 @@
-<div class="col-12" id="timeline-container"></div>
+<div [hidden]="innerWidth < 1320" class="col-12" id="timeline-container"></div>
+<div [hidden]="innerWidth >= 1320" class="w-100">
+  <div class="col-8 mx-auto mt-8 text-center">
+    <h2 class=" pxl-font">SORRY</h2>
+    <span>Tijdlijn is enkel beschikbaar op schermen breeder als 1320 pixels</span>
+  </div>
+
+</div>

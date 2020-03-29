@@ -1,1 +1,8 @@
-<div id="x-factor-container"></div>
+<div [hidden]="innerWidth < 1000" class="col-12" id="x-factor-container"></div>
+<div [hidden]="innerWidth >= 1000" class="w-100">
+  <div class="col-8 mx-auto mt-8 text-center">
+    <h2 class=" pxl-font">SORRY</h2>
+    <span>X-factor is enkel beschikbaar op schermen breeder als 1000 pixels</span>
+  </div>
+
+</div>

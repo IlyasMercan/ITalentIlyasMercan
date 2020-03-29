@@ -1,4 +1,4 @@
-import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, HostListener, OnInit, Output} from '@angular/core';
 import * as d3 from 'd3';
 import {Event} from '../../models/event.model';
 import {EventService} from '../../services/event.service';
@@ -13,13 +13,22 @@ const END_TIMELINE = new Date('2020-03-01');
 })
 export class TimelineComponent implements OnInit {
 
+  innerWidth: any;
+
   @Output() onClickOnEvent: EventEmitter<Event> = new EventEmitter();
 
   constructor(private service: EventService) {
   }
 
   ngOnInit() {
+    this.innerWidth = window.innerWidth;
     this.createTimeline();
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event) {
+    this.innerWidth = window.innerWidth;
+    console.log(this.innerWidth);
   }
 
   createTimeline() {

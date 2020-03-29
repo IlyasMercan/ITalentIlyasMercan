@@ -1,4 +1,4 @@
-import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, HostListener, OnInit, Output} from '@angular/core';
 import {Event} from '../../models/event.model';
 import {EventService} from '../../services/event.service';
 import * as d3 from 'd3';
@@ -10,12 +10,20 @@ import * as d3 from 'd3';
 })
 export class InteractiveXFactorComponent implements OnInit {
 
+  innerWidth: any;
+
   @Output() onClickOnXFactorEvent: EventEmitter<Event> = new EventEmitter();
 
   constructor(private service: EventService) { }
 
   ngOnInit() {
+    this.innerWidth = window.innerWidth;
     this.createInteractiveXFactor();
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event) {
+    this.innerWidth = window.innerWidth;
   }
 
   createInteractiveXFactor() {
