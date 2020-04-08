@@ -2,7 +2,6 @@ import {NgModule} from '@angular/core';
 import {Routes, RouterModule, ActivatedRouteSnapshot, RouterStateSnapshot} from '@angular/router';
 import {HomeComponent} from './components/home/home.component';
 import {XFactorComponent} from './components/x-factor/x-factor.component';
-import {AboutComponent} from './components/about/about.component';
 import {OverviewComponent} from './components/overview/overview.component';
 import {FinalReflectionComponent} from './components/final-reflection/final-reflection.component';
 
@@ -23,10 +22,6 @@ const routes: Routes = [
   {
     path: 'overview',
     component: OverviewComponent
-  },
-  {
-    path: 'about',
-    component: AboutComponent
   },
   {
     path: 'final-reflection',

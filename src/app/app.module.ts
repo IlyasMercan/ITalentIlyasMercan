@@ -7,7 +7,6 @@ import { HomeComponent } from './components/home/home.component';
 import { TimelineComponent } from './components/timeline/timeline.component';
 import {EventService} from './services/event.service';
 import {XFactorComponent} from './components/x-factor/x-factor.component';
-import { AboutComponent } from './components/about/about.component';
 import { EventDetailComponent } from './components/event-detail/event-detail.component';
 import {HttpClientModule} from '@angular/common/http';
 import { NewLinePipe } from './pipes/new-line.pipe';
@@ -22,7 +21,6 @@ import { FinalReflectionComponent } from './components/final-reflection/final-re
     HomeComponent,
     TimelineComponent,
     XFactorComponent,
-    AboutComponent,
     EventDetailComponent,
     NewLinePipe,
     InteractiveXFactorComponent,

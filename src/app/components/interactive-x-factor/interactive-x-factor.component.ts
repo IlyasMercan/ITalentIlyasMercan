@@ -61,7 +61,7 @@ export class InteractiveXFactorComponent implements OnInit {
       })
       .on('mouseout', () => {
         document.getElementById('ondernemend-en-innovatief').setAttribute('fill-opacity', '0.25');
-      });;
+      });
 
     // (internationaal) samen(net)werking
     this.createRectangle(xFactor, '#58a618', 0.25, 252, 66, 15,  416, 15, 15,  'internationaal-samen-net-werking', 'internationaal-samen-net-werking')
@@ -71,7 +71,7 @@ export class InteractiveXFactorComponent implements OnInit {
       })
       .on('mouseout', () => {
         document.getElementById('internationaal-samen-net-werking').setAttribute('fill-opacity', '0.25');
-      });;
+      });
 
     // multi- & disciplinariteit
     this.createRectangle(xFactor, '#58a618', 0.25, 252, 66, 555,  416, 15, 15,  'multi-en-disciplinariteit', 'multi-en-disciplinariteit')
@@ -81,7 +81,7 @@ export class InteractiveXFactorComponent implements OnInit {
       })
       .on('mouseout', () => {
         document.getElementById('multi-en-disciplinariteit').setAttribute('fill-opacity', '0.25');
-      });;
+      });
   }
 
   createRectangle(svg, fill, fillOpacity, width, height, x, y, rx, ry, htmlClass, id) {

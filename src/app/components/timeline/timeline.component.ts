@@ -28,7 +28,6 @@ export class TimelineComponent implements OnInit {
   @HostListener('window:resize', ['$event'])
   onResize(event) {
     this.innerWidth = window.innerWidth;
-    console.log(this.innerWidth);
   }
 
   createTimeline() {
